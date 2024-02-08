@@ -19,6 +19,7 @@ import CoalitionLogo from "../public/images/Coalition_Logo.png";
 
 interface CoalitionWelcomeEmailProps {
   name: string;
+  industry: string;
   steps?: {
     id: number;
     Description: React.ReactNode;
@@ -33,12 +34,13 @@ console.log(baseUrl);
 
 const PropDefaults: CoalitionWelcomeEmailProps = {
   name: "Government Contractor",
+  industry: 'hello',
   links: ["Visit the forums", "Read the docs", "Contact an expert"],
 };
 
 export const CoalitionWelcomeMail = ({
   name = PropDefaults.name,
-  steps = PropDefaults.steps,
+  industry = PropDefaults.industry,
   links = PropDefaults.links,
 }: CoalitionWelcomeEmailProps) => {
   return (
@@ -91,7 +93,7 @@ export const CoalitionWelcomeMail = ({
                 <Text className="text-base">Here's how to get started:</Text>
                 <div>
                   <Button onClick={()=>console.log('find a broker')} className="bg-blue text-white rounded-lg py-3 px-[18px]">
-                    Find a Broker
+                    Find a Broker in {industry}
                   </Button>
                   <Button className="bg-yellow text-white rounded-lg m-2 py-3 px-[18px]">
                     Already Have a Broker?

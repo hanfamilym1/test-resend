@@ -5,14 +5,15 @@ import * as React from 'react';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST() {
+export async function POST(req: Request) {
   try {
+    const { name, email, industry } = await req.json();
     const { data, error } = await resend.emails.send({
       from: 'Coalition Test <onboarding@resend.dev>',
       // to: ['michael.han@coalitioninc.com', 'shane@coalitioninc.com', 'erik.brown@coalitioninc.com', 'kaydee.walter@coalitioninc.com', 'sarah@coalitioninc.com', 'abby.dobbs@coalitioninc.com'],
-      to: ['michael.han@coalitioninc.com'],
+      to: [`${email}`],
       subject: "Government Contracts",
-      react: CoalitionWelcomeMail({name: 'Michael Han'}) as React.ReactElement,
+      react: CoalitionWelcomeMail({name, industry}) as React.ReactElement,
     });
 
     console.log('hey', data, error)
