@@ -2,12 +2,15 @@
   "name": "resend-nextjs-app-router-example",
   "private": true,
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "email": "email dev"
   },
   "dependencies": {
+    "@react-email/components": "0.0.14",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-email": "2.0.0",
     "resend": "latest"
   },
   "devDependencies": {
