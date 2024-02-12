@@ -38,7 +38,7 @@ const PropDefaults: CoalitionWelcomeEmailProps = {
   links: ["Visit the forums", "Read the docs", "Contact an expert"],
 };
 
-export const CoalitionWelcomeMail = ({
+export const CoalitionSecondaryMail = ({
   name = PropDefaults.name,
   industry = PropDefaults.industry,
   links = PropDefaults.links,
@@ -143,4 +143,4 @@ export const CoalitionWelcomeMail = ({
   );
 };
 
-export default CoalitionWelcomeMail;
+export default CoalitionSecondaryMail;
